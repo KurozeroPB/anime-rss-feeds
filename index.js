@@ -53,13 +53,13 @@ rssfeeds.on('new-item', async (item) => {
     if (process.uptime() < config.startDelay) return;
 
     const annCheck = item.meta.title.indexOf('Anime News Network') !== -1;
-    const hsCheck = item.title.indexOf('HorribleSubs') !== -1 && item.title.indexOf('1080p') !== -1;
+    const hsCheck = item.title.indexOf('HorribleSubs') !== -1;
     const wjCheck = item.meta.title.indexOf('WOWJAPAN') !== -1;
 
     if (annCheck) {
         await webhooks.animenewsnetwork(item);
     } else if (hsCheck) {
-        await webhooks.horriblesubs(item);
+        if (item.title.indexOf('1080p') !== -1) await webhooks.horriblesubs(item);
     } else if (wjCheck) {
         await webhooks.wowjapan(item);
     } else {
