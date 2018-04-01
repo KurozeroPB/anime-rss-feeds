@@ -1,2 +1,2 @@
 # anime-rss-feeds
-Sends feed updates to a Discord channel using webhooks
+My shitty code to send rss feed updates to a Discord channel using webhooks
