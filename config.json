@@ -1,0 +1,6 @@
+{
+  "startDelay": 10,
+  "sentry": {
+    "dsn": "https://1bead4d1beab4afebcad10592b2c9b9c:6a9979df135547ec8bf2a0f699d31107@sentry.io/789740"
+  }
+}

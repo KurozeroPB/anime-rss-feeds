@@ -1,0 +1,6 @@
+{
+  "startDelay": 10,
+  "sentry": {
+    "dsn": ""
+  }
+}

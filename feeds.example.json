@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Anime News Network",
+    "avatar": "https://b.catgirlsare.sexy/LMzO.png",
+    "url": "https://www.animenewsnetwork.com/all/rss.xml",
+    "id": "WEBHOOK_ID",
+    "token": "WEBHOOK_TOKEN",
+    "refresh": 10000
+  },
+  {
+    "name": "HorribleSubs",
+    "avatar": "https://b.catgirlsare.sexy/0Sa2.jpg",
+    "url": "https://nyaa.si/?page=rss&u=HorribleSubs",
+    "id": "WEBHOOK_ID",
+    "token": "WEBHOOK_TOKEN",
+    "refresh": 10000
+  },
+  {
+    "name": "WowJapan",
+    "avatar": "https://b.catgirlsare.sexy/JoZg.png",
+    "url": "http://feeds.feedburner.com/Wowjapan?format=xml",
+    "id": "WEBHOOK_ID",
+    "token": "WEBHOOK_TOKEN",
+    "refresh": 10000
+  },
+  {
+    "name": "Unknown",
+    "avatar": "https://b.catgirlsare.sexy/e5rp.jpg",
+    "urls": [
+      "https://mangadex.org/rss/manga_id/17834"
+    ],
+    "id": "WEBHOOK_ID",
+    "token": "WEBHOOK_TOKEN",
+    "refresh": 10000
+  }
+]
