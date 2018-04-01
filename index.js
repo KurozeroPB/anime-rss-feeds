@@ -1,6 +1,5 @@
 /**
  * Using JSDoc so webstorm doesn't cry about unused properties
- * @namespace formatter
  * @namespace replacement
  */
 
@@ -15,7 +14,7 @@ const feeds = require('./feeds');
 
 process.setMaxListeners(0);
 
-const logger = new Logger(true, true);
+const logger = new Logger(true, true, config.sentry.dsn);
 
 const td = new TurndownService({
     headingStyle: 'atx',
