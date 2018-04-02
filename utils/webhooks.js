@@ -123,7 +123,7 @@ class Feeds {
                 embeds: [{
                     title: item.title,
                     url: item.link,
-                    description: `${item.categories ? `**${item.categories.join(', ')}**` : ''}\n${newDesc}`,
+                    description: `${item.categories && item.categories.length > 0 ? `**${item.categories.join(', ')}**\n` : ''}${newDesc}`,
                     color: 0xe9184e,
                     timestamp: item.date
                 }]

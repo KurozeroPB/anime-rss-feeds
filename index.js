@@ -1,8 +1,3 @@
-/**
- * Using JSDoc so webstorm doesn't cry about unused properties
- * @namespace replacement
- */
-
 const TurndownService = require('turndown');
 const RssFeed = require('rss-feed-emitter');
 const Eris = require('eris');
@@ -23,6 +18,7 @@ const td = new TurndownService({
     emDelimiter: '*'
 });
 
+// noinspection JSUnusedGlobalSymbols
 td.addRule('cite', {
     filter: ['cite'],
     replacement: (content) => {
@@ -69,11 +65,10 @@ rssfeeds.on('new-item', async (item) => {
 
 rssfeeds.on('error', (e) => {
     if (e.feed) {
-        let feedName = '';
+        let feedName = e.feed;
         if (e.feed.toLowerCase().includes('animenewsnetwork')) feedName = 'AnimeNewsNetwork';
         if (e.feed.toLowerCase().includes('horriblesubs')) feedName = 'HorribleSubs';
         if (e.feed.toLowerCase().includes('wowjapan')) feedName = 'WowJapan';
-        else feedName = e.feed;
 
         logger.error('error', `${feedName}: ${e.message}`);
     } else {
