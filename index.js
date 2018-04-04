@@ -1,7 +1,6 @@
 const TurndownService = require('turndown');
 const RssFeed = require('rss-feed-emitter');
 const Eris = require('eris');
-const util = require('util');
 const Logger = require('./utils/Logger');
 const Feeds = require('./utils/webhooks');
 const config = require('./config');
@@ -38,7 +37,7 @@ const webhooks = new Feeds({
 const rssfeeds = new RssFeed();
 
 feeds.forEach((feed) => {
-    if (feed.name === 'Unknown' && feed.urls.length >= 1) {
+    if (feed.name === 'Unknown' && feed.urls.length > 0) {
         feed.urls.forEach((url) => rssfeeds.add({url: url, refresh: feed.refresh}));
     } else {
         if (feed.name !== 'Unknown') rssfeeds.add({url: feed.url, refresh: feed.refresh});
@@ -66,18 +65,18 @@ rssfeeds.on('new-item', async (item) => {
 rssfeeds.on('error', (e) => {
     if (e.feed) {
         let feedName = e.feed;
-        if (e.feed.toLowerCase().includes('animenewsnetwork')) feedName = 'AnimeNewsNetwork';
-        if (e.feed.toLowerCase().includes('horriblesubs')) feedName = 'HorribleSubs';
-        if (e.feed.toLowerCase().includes('wowjapan')) feedName = 'WowJapan';
+        if (e.feed.indexOf('animenewsnetwork') !== -1) feedName = 'AnimeNewsNetwork';
+        if (e.feed.indexOf('HorribleSubs') !== -1) feedName = 'HorribleSubs';
+        if (e.feed.indexOf('Wowjapan') !== -1) feedName = 'WowJapan';
 
         logger.error('error', `${feedName}: ${e.message}`);
     } else {
-        logger.error('error', util.inspect(e));
+        logger.error('error', e);
     }
 });
 
-process.on('uncaughtException', (e) => logger.error('error', util.inspect(e)));
-process.on('unhandledRejection', (e) => logger.error('error', util.inspect(e)));
+process.on('uncaughtException', (e) => logger.error('error', e));
+process.on('unhandledRejection', (e) => logger.error('error', e));
 
 process.on('SIGINT', () => {
     logger.warn('close', 'Stopping listeners');

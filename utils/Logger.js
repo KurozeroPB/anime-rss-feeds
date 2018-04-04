@@ -1,6 +1,7 @@
 const moment = require('moment');
 const chalk = require('chalk');
 const Raven = require('raven');
+const {handleError} = require('./utils');
 
 class Logger {
     /**
@@ -46,9 +47,10 @@ class Logger {
     /**
      * Log error
      * @param {String} lbl
-     * @param {String} msg
+     * @param {*} msg
      */
     error(lbl, msg) {
+        msg = handleError(msg);
         Raven.captureException(msg, {level: 'error'});
 
         let level = '';

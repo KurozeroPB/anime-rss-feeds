@@ -1,4 +1,8 @@
-const util = require('util');
+/**
+ * TODO:
+ * Look into [Seasonal releases]{@link http://www.senpai.moe/?season=spring2018&zone=Europe/Amsterdam&mode=table&air=stream}
+ * And [Utils]{@link http://utils.senpai.moe/}
+ */
 
 class Feeds {
     /**
@@ -38,7 +42,7 @@ class Feeds {
                 }]
             });
         } catch (e) {
-            this.logger.error('webhook', util.inspect(e));
+            this.logger.error('webhook', e);
         }
     }
 
@@ -76,7 +80,7 @@ class Feeds {
                 }]
             });
         } catch (e) {
-            this.logger.error('webhook', util.inspect(e));
+            this.logger.error('webhook', e);
         }
     }
 
@@ -103,7 +107,7 @@ class Feeds {
                 }]
             });
         } catch (e) {
-            this.logger.error('webhook', util.inspect(e));
+            this.logger.error('webhook', e);
         }
     }
 
@@ -129,7 +133,7 @@ class Feeds {
                 }]
             });
         } catch (e) {
-            this.logger.error('webhook', util.inspect(e));
+            this.logger.error('webhook', e);
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "anime-rss-feeds",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Posts to a discord webhook whenever a new item is added to an rss feed it follows",
   "main": "index.js",
   "repository": "https://github.com/KurozeroPB/anime-rss-feeds",
